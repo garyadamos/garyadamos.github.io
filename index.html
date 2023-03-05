@@ -1,2 +1,80 @@
-<button id="startButton">StartCounter</button>
-<div id="counter"></div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown and Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .counter {
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="start-button">Start</button>
+      <div id="countdown"></div>
+      <div id="counter" class="counter"></div>
+    </div>
+
+    <script>
+      var counterInterval;
+
+      function startCountdown() {
+        var countdownEl = document.getElementById("countdown");
+        countdownEl.innerText = "3";
+
+        setTimeout(function () {
+          countdownEl.innerText = "2";
+        }, 1000);
+
+        setTimeout(function () {
+          countdownEl.innerText = "1";
+        }, 2000);
+
+        setTimeout(function () {
+          countdownEl.style.display = "none";
+          startCounter();
+        }, 3000);
+      }
+
+      function startCounter() {
+        var counterEl = document.getElementById("counter");
+        var count = 0;
+
+        counterInterval = setInterval(function () {
+          count++;
+          counterEl.innerText = count;
+        }, 10);
+      }
+
+      function stopCounter() {
+        clearInterval(counterInterval);
+      }
+
+      document
+        .getElementById("start-button")
+        .addEventListener("click", function () {
+          startCountdown();
+        });
+
+      document.addEventListener("mousemove", function () {
+        stopCounter();
+      });
+
+      document.addEventListener("keydown", function () {
+        stopCounter();
+      });
+    </script>
+  </body>
+</html>
