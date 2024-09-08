@@ -14,7 +14,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px 40px; /* Increased top padding to account for fixed header */
+            padding: 80px 20px 40px; 
         }
         header {
             position: fixed;
@@ -177,11 +177,97 @@
             align-items: flex-start;
             margin-bottom: 40px;
         }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            margin-left: 20px;
+        }
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 60px 15px 30px;
+            }
+            header {
+                padding: 20px 30px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo-nav {
+                width: 100%;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 21px;
+            }
+            .menu-toggle .bar {
+                width: 100%;
+                height: 3px;
+                background-color: #ffffff;
+                margin: 0;
+            }
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+            }
+            nav.active {
+                display: flex;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            .social-links {
+                display: none;
+            }
+            .hero {
+                margin-top: 160px;
+            }
+            .hero-text, .subtitle {
+                max-width: 100%;
+                padding: 20px 25px;
+            }
+            .hero-text h1 {
+                font-size: 60px;
+            }
+            .hero-text p {
+                font-size: 24px;
+            }
+            .section-title h2 {
+                font-size: 20px;
+            }
+            .section-content {
+                padding: 15px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 40px;
+            }
+            .hero-text p {
+                font-size: 18px;
+            }
+        }
     </style>
-    <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body>
+<body id="top">
     <header>
         <div class="logo-nav">
             <nav>
@@ -190,6 +276,11 @@
                 <a href="#experience">experience</a>
                 <a href="#projects">projects</a>
             </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
         <div class="social-links">
             <a href="https://www.instagram.com/garyadamos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -307,6 +398,18 @@
         }
 
         typeText();
+
+        // Add this new script for the mobile menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        });
+        
     </script>
 </body>
 </html>
