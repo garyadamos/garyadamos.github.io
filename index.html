@@ -1,1 +1,312 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gary Adamos - Data Professional</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 40px; /* Increased top padding to account for fixed header */
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            background-color: #007aff;
+            border-radius: 20px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 122, 255, 0.3);
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #ffffff;
+            margin-right: 20px;
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: opacity 0.3s ease;
+        }
+        nav a:last-child {
+            margin-right: 0;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
+        .social-links a {
+            margin-left: 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #007aff;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 240px;
+            margin-bottom: 40px;
+        }
+        .hero-text, .subtitle {
+            background-color: #007aff;
+            border-radius: 30px;
+            padding: 30px 40px;
+            max-width: 60%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .subtitle p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .hero-text h1 {
+            font-size: 120px;
+            margin: 0 0 40px 0;
+            color: #ffffff;
+            position: relative;
+            display: inline-block;
+            font-weight: normal;
+        }
+        .hero-text h1 .mention {
+            display: inline-block;
+            position: relative;
+        }
+        .hero-text h1 .mention.highlighted::after {
+            content: '';
+            position: absolute;
+            left: -2px;
+            right: -2px;
+            top: -2px;
+            bottom: -2px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .hero-text h1 .mention.final {
+            font-weight: bold; /* Only the final mention will be bold */
+            color: #ffffff;
+            animation: jiggle 0.3s ease-in-out;
+        }
+        @keyframes jiggle {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-5px); }
+            75% { transform: translateY(5px); }
+        }
+        .hero-text p {
+            font-size: 30px;
+            margin: 0;
+            color: #ffffff;
+        }
+        .section-title {
+            background-color: #007AFF;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0, 122, 255, 0.3);
+        }
+        .section-title h2 {
+            font-size: 24px;
+            margin: 0;
+            color: #ffffff;
+            white-space: nowrap;
+            font-weight: normal;
+        }
+        .section-content {
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            padding: 20px;
+            display: inline-block;
+            max-width: 100%;
+        }
+        .section-content p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .subtitle {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .subtitle.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .subtitle.pop-in {
+            animation: popIn 0.5s forwards;
+        }
+        #about-me, #experience, #projects {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+    </style>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-nav">
+            <nav>
+                <a href="#top">home</a>
+                <a href="#about-me">about me</a>
+                <a href="#experience">experience</a>
+                <a href="#projects">projects</a>
+            </nav>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/garyadamos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/garyadamos/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:garyadamos@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/garyadamos/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            <section class="hero">
+                <div class="hero-text">
+                    <h1><span id="typing-text"></span><span id="mention" class="mention"></span></h1>
+                </div>
+                <div class="subtitle">
+                    <p>a data professional from san diego.</p>
+                </div>
+            </section>
+            <section id="about-me">
+                <div class="section-title">
+                    <h2>about me</h2>
+                </div>
+                <div class="section-content">
+                    <p>I've been working professionally with data for 3 years now. I've always loved math and science, and I love to learn new technologies.</p>
+                    <p>In my free time, I like to play piano, workout, and build software, mostly for fun.</p>
+                    <p>My favorite msuicians right now are Bill Evans, Gigi D'Agostino, and Beabadoobee and I'd love to learn about more.</p>
+                    <p>I'm currently working on a project similar to geoguessr but for a different domain that i'm interested in.</p>
+                </div>
+            </section>
+            <section id="experience">
+                <div class="section-title">
+                    <h2>experience</h2>
+                </div>
+                <div class="section-content">
+                    <p>University of California, San Diego (UCSD).   2019 – 2023<br>
+                        B.S. Mathematics-Computer Science. San Diego, CA
+                    </p>
+                </div>
+                <div class="section-content" style="margin-top: 10px;">
+                    <p>UCSD Health Hospital. 2020 – 2023<br>
+                        Data Analyst. San Diego, CA
+                    </p>
+                </div>
+                <div class="section-content" style="margin-top: 10px;">
+                    <p>Calit2 Qualcomm Institute. 2022 – 2023<br>
+                        Research Analyst. San Diego, CA
+                    </p>
+                </div>
+            </section>
+            <section id="projects">
+                <div class="section-title">
+                    <h2>projects</h2>
+                </div>
+                <div class="section-content" style="margin-top: 10px;">
+                    <p>This website. 2024<br>
+                        I built this website to showcase my projects and skills. I used HTML, CSS, and JavaScript to build it. 
+                        I'm still working on it.
+                    </p>
+                </div>
+                <div class="section-content" style="margin-top: 10px;">
+                    <p>youtube to spotify playlist. 2021<br>
+                        I built this project to allow users to easily convert their youtube playlists to spotify playlists. I used Python, and the spotify and youtube APIs to build it.
+                    </p>
+                </div>
+                <div class="section-content" style="margin-top: 10px;">
+                    <p>gmail loader and analysis 2024<br>
+                        I built this project to load and analyze my gmail data. I used Python, MySQL, and the gmail API to load my gmail data.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const fullText = "hi, i'm ";
+        const mentionText = "@gary";
+        const typingText = document.getElementById('typing-text');
+        const mentionSpan = document.getElementById('mention');
+        const subtitleDiv = document.querySelector('.subtitle');
+        let index = 0;
+        let isMentionTyping = false;
+
+        function typeText() {
+            if (index < fullText.length) {
+                typingText.textContent += fullText.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            } else if (!isMentionTyping) {
+                isMentionTyping = true;
+                typeMention();
+            }
+        }
+
+        function typeMention() {
+            if (mentionSpan.textContent.length < mentionText.length) {
+                mentionSpan.textContent += mentionText.charAt(mentionSpan.textContent.length);
+                mentionSpan.classList.add('highlighted');
+                setTimeout(typeMention, 100);
+            } else {
+                setTimeout(() => {
+                    mentionSpan.textContent = "Gary";
+                    mentionSpan.classList.remove('highlighted');
+                    mentionSpan.classList.add('final');
+                    mentionSpan.offsetHeight;
+                    mentionSpan.style.animation = 'none';
+                    mentionSpan.offsetHeight;
+                    mentionSpan.style.animation = null;
+                    setTimeout(showSubtitle, 500);
+                }, 500);
+            }
+        }
+
+        function showSubtitle() {
+            subtitleDiv.classList.add('show', 'pop-in');
+        }
+
+        typeText();
+    </script>
+</body>
+</html>
