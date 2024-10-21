@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gary Adamos - Data Professional</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .bg-custom-blue { background-color: #007aff; }
+        .text-custom-blue { color: #007aff; }
+        .hover\:text-custom-blue:hover { color: #007aff; }
+    </style>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body id="top" class="bg-gradient-to-br from-gray-100 to-blue-200 min-h-screen">
+    <header class="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 flex justify-between items-center">
+        <div class="logo-nav bg-custom-blue rounded-full p-2 md:p-4 shadow-lg transition-all duration-300 ease-in-out">
+            <!-- Desktop navbar (completely hidden on mobile) -->
+            <nav class="hidden md:block mobile-hidden">
+                <ul class="md:flex md:space-x-4">
+                    <li><a href="#top" class="text-white hover:opacity-80 transition-opacity duration-300">home</a></li>
+                    <li><a href="#about-me" class="text-white hover:opacity-80 transition-opacity duration-300">about me</a></li>
+                    <li><a href="#experience" class="text-white hover:opacity-80 transition-opacity duration-300">experience</a></li>
+                    <li><a href="#projects" class="text-white hover:opacity-80 transition-opacity duration-300">projects</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="social-links flex space-x-4">
+            <a href="https://www.instagram.com/garyadamos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-gray-800 hover:text-custom-blue transition-colors duration-300">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/garyadamos/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-800 hover:text-custom-blue transition-colors duration-300">
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="mailto:garyadamos@gmail.com" aria-label="Email" class="text-gray-800 hover:text-custom-blue transition-colors duration-300">
+                <i class="fas fa-envelope text-2xl"></i>
+            </a>
+            <a href="https://github.com/garyadamos/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-800 hover:text-custom-blue transition-colors duration-300">
+                <i class="fab fa-github text-2xl"></i>
+            </a>
+        </div>
+    </header>
+    <div class="container mx-auto px-4 pt-32 md:pt-40">
+        <main>
+            <section class="hero mb-24 flex flex-col items-start">
+                <div class="hero-text bg-custom-blue rounded-3xl p-10 md:p-12 shadow-xl mb-6 inline-block">
+                    <h1 class="text-7xl md:text-9xl text-white font-normal whitespace-nowrap">
+                        <span id="typing-text"></span><span id="mention" class="mention"></span>
+                    </h1>
+                </div>
+                <div id="subtitle" class="subtitle bg-custom-blue rounded-3xl p-8 md:p-10 shadow-xl inline-block opacity-0">
+                    <p class="text-xl md:text-2xl text-white whitespace-nowrap">a data professional from san diego.</p>
+                </div>
+            </section>
+            <section id="about-me" class="mb-20">
+                <div class="section-title bg-custom-blue rounded-2xl px-6 py-3 inline-block shadow-lg mb-4">
+                    <h2 class="text-2xl text-white font-normal">about me</h2>
+                </div>
+                <div class="section-content bg-gray-100 rounded-2xl p-6 max-w-3xl">
+                    <p class="mb-4">I've been working professionally with data for 3 years now. I've always loved math and science, and I love to learn new technologies.</p>
+                    <p class="mb-4">In my free time, I like to play piano, workout, and build software, mostly for fun.</p>
+                    <p class="mb-4">My favorite musicians right now are Bill Evans, Gigi D'Agostino, and Beabadoobee and I'd love to learn about more.</p>
+                    <p>I'm currently working on a project similar to geoguessr but for a different domain that I'm interested in.</p>
+                </div>
+            </section>
+            <section id="experience" class="mb-20">
+                <div class="section-title bg-custom-blue rounded-2xl px-6 py-3 inline-block shadow-lg mb-4">
+                    <h2 class="text-2xl text-white font-normal">experience</h2>
+                </div>
+                <div class="section-content bg-gray-100 rounded-2xl p-6 mb-4">
+                    <p>University of California, San Diego (UCSD). 2019 – 2023<br>
+                        B.S. Mathematics-Computer Science. San Diego, CA
+                    </p>
+                </div>
+                <div class="section-content bg-gray-100 rounded-2xl p-6 mb-4">
+                    <p>UCSD Health Hospital. 2020 – 2023<br>
+                        Data Analyst. San Diego, CA
+                    </p>
+                </div>
+                <div class="section-content bg-gray-100 rounded-2xl p-6">
+                    <p>Calit2 Qualcomm Institute. 2022 – 2023<br>
+                        Research Analyst. San Diego, CA
+                    </p>
+                </div>
+            </section>
+            <section id="projects" class="mb-20">
+                <div class="section-title bg-custom-blue rounded-2xl px-6 py-3 inline-block shadow-lg mb-4">
+                    <h2 class="text-2xl text-white font-normal">projects</h2>
+                </div>
+                <div class="section-content bg-gray-100 rounded-2xl p-6 mb-4">
+                    <p>This website. 2024<br>
+                        I built this website to showcase my projects and skills. I used HTML, CSS, and JavaScript to build it. 
+                        I'm still working on it.
+                    </p>
+                </div>
+                <div class="section-content bg-gray-100 rounded-2xl p-6 mb-4">
+                    <p>youtube to spotify playlist. 2021<br>
+                        I built this project to allow users to easily convert their youtube playlists to spotify playlists. I used Python, and the spotify and youtube APIs to build it.
+                    </p>
+                </div>
+                <div class="section-content bg-gray-100 rounded-2xl p-6">
+                    <p>gmail loader and analysis 2024<br>
+                        I built this project to load and analyze my gmail data. I used Python, MySQL, and the gmail API to load my gmail data.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const fullText = "hi, i'm ";
+        const mentionText = "@gary";
+        const typingText = document.getElementById('typing-text');
+        const mentionSpan = document.getElementById('mention');
+        const subtitleDiv = document.querySelector('.subtitle');
+        let index = 0;
+        let isMentionTyping = false;
+
+        function typeText() {
+            if (index < fullText.length) {
+                typingText.textContent += fullText.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            } else if (!isMentionTyping) {
+                isMentionTyping = true;
+                typeMention();
+            }
+        }
+
+        function typeMention() {
+            if (mentionSpan.textContent.length < mentionText.length) {
+                mentionSpan.textContent += mentionText.charAt(mentionSpan.textContent.length);
+                mentionSpan.classList.add('highlighted');
+                setTimeout(typeMention, 100);
+            } else {
+                setTimeout(() => {
+                    mentionSpan.textContent = "Gary";
+                    mentionSpan.classList.remove('highlighted');
+                    mentionSpan.classList.add('final');
+                    mentionSpan.offsetHeight;
+                    mentionSpan.style.animation = 'none';
+                    mentionSpan.offsetHeight;
+                    mentionSpan.style.animation = null;
+                    setTimeout(showSubtitle, 500);
+                }, 500);
+            }
+        }
+
+        function showSubtitle() {
+            subtitleDiv.classList.add('show', 'pop-in');
+        }
+
+        typeText();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const logoNav = document.querySelector('.logo-nav');
+            const nav = document.querySelector('nav');
+
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                logoNav.classList.toggle('collapsed');
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
